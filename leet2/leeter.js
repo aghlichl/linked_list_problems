@@ -2,16 +2,16 @@
 
 
 
-let isPalindrome = function (x) {
+var isPalindrome = function (x) {
     if (x < 0) {
         return false;
     }
-    let xString = x.toString();
-    let temp = xString;
-    xString = xString.split();
-    xString = xString.reverse();
-    xString = xString.join();
-    return temp === xString
-
-
+    x = x.toString();
+    let xRay = x.split('');
+    for (let i = 0; i < xRay.length; i++) {
+        if (xRay[i] !== xRay[(xRay.length - 1 - i)]) {
+            return false
+        }
+    }
+    return true
 };
