@@ -2,12 +2,16 @@
 
 
 
-function traversal(node){
-    if(!node){
-        return [];
+let isPalindrome = function (x) {
+    if (x < 0) {
+        return false;
     }
-    
-    let result = []
-    return traversal(node.left) + [node.val] + traversal(node.right);
+    let xString = x.toString();
+    let temp = xString;
+    xString = xString.split();
+    xString = xString.reverse();
+    xString = xString.join();
+    return temp === xString
 
-}
+
+};
