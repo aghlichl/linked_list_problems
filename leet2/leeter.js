@@ -1,17 +1,36 @@
-//Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+//medium leet code Skyline
 
-
-
-var isPalindrome = function (x) {
-    if (x < 0) {
-        return false;
+var maxIncreaseKeepingSkyline = function(grid) {
+    let max_row=[];
+    for (let i=0; i<grid.length; i++){
+        let max=0
+        for (let j=0; j<grid[i].length; j++){
+            if(grid[i][j] > max){
+                max=grid[i][j]
+            }
+        }    
+        max_row.push(max)
     }
-    x = x.toString();
-    let xRay = x.split('');
-    for (let i = 0; i < xRay.length; i++) {
-        if (xRay[i] !== xRay[(xRay.length - 1 - i)]) {
-            return false
-        }
+    
+    let max_column=[];
+    for (let i=0; i<grid.length; i++){
+        let max=0
+        for (let j=0; j<grid[i].length; j++){
+            if(grid[j][i] > max){
+                max=grid[j][i]
+            }
+        }    
+        max_column.push(max)
     }
-    return true
+    
+    let total=0
+    for (let i=0; i<grid.length; i++){
+        for (let j=0; j<grid[i].length; j++){
+            total+=(grid[i][j]-(Math.min(max_column[i], max_row[j])))
+        }    
+    }
+    total=total*-1
+    
+    return total
+    
 };
