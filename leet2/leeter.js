@@ -37,6 +37,27 @@ var maxIncreaseKeepingSkyline = function(grid) {
 
 
 
-var longestPalindrome = function (s) {
+let longestPalindrome = function (s) {
+    let i = 0
+    let longest = ''
+    while (i < (Math.floor(str.length / 2))) {
 
+        if (isPalindrome(s.slice((i), (s.length - i - 1)))) {
+            if (((s.length - i - 1) - i) > longest.length) {
+
+            }
+        }
+    }
 };
+
+let isPalindrome = function (str){
+    let i = 0
+    while (i < (Math.floor(str.length / 2))) {
+        if (str[i] !== str[str.length - i - 1]) {
+            return false
+        }
+        i++
+    }
+    return true;
+
+}
