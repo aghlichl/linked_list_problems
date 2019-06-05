@@ -34,3 +34,9 @@ var maxIncreaseKeepingSkyline = function(grid) {
     return total
     
 };
+
+
+
+var longestPalindrome = function (s) {
+
+};
